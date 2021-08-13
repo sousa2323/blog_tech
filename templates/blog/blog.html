@@ -1,0 +1,19 @@
+{% load static %}
+
+<section>
+    <header class="major">
+        <h2>Nossos Posts</h2>
+    </header>
+        <div class="posts">
+            {% for posts in post %}
+                <article>
+                    <a href="#" class="image"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                    <h3>{{posts.title}}</h3>
+                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+                    <ul class="actions">
+                        <li><a href="#" class="button">More</a></li>
+                    </ul>
+                </article>
+            {% endfor %}
+        </div>
+</section>

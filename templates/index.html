@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}	
+		<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+						{% include 'components/_header.html' %}
+
+					<!-- Banner -->
+							{% include 'banner.html' %}
+
+					<!--Blog-->
+							{% include 'blog/blog.html' %}						
+				</div>
+			</div>
+
+		<!-- Sidebar -->
+			<div id="sidebar">
+				<div class="inner">
+					<!-- Search -->
+						{% include 'search.html' %}
+
+					<!-- Menu -->
+						{% include 'menu.html' %}	
+
+					<!-- Recent -->
+						{% include 'blog/recent_blog.html' %}	
+
+					<!-- Contact -->
+						{% include 'contact.html' %}
+
+					<!-- Footer -->
+						{% include 'components/_footer.html' %}
+				</div>
+			</div>
+{% endblock main %}	
