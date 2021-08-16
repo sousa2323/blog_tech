@@ -4,21 +4,15 @@
     <header class="major">
         <h2>Destaques</h2>
     </header>
-    <div class="mini-posts">
-        <article>
-            <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-        </article>
-        <article>
-            <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-        </article>
-        <article>
-            <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-            <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-        </article>
+    <div class="mini-posts"> 
+        {% for feature in featured %}
+            <article>
+                <a href="#" class="image"><img src="{{ feature.image_featured.url }}" alt="" /></a>
+                <p>{{ feature.sub_title_featured|safe|slice:150 }}</p>
+            </article>
+        {% endfor %}
     </div>
     <ul class="actions">
-        <li><a href="#" class="button">More</a></li>
+        <li><a href="#" class="button">Mais</a></li>
     </ul>
 </section>

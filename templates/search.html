@@ -1,7 +1,8 @@
 {% load static %}
 
 <section id="search" class="alt">
-    <form method="post" action="#">
+    <form method="POST" action="{% url 'search_results' %}">
+        {% csrf_token %}
         <input type="text" name="query" id="query" placeholder="Pesquisar" />
     </form>
 </section>

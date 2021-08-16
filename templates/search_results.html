@@ -1,0 +1,23 @@
+{% load static %}
+
+
+{% block main %}
+    
+    {% if query %}
+
+        <h1>Pesquisa {{ query }}</h1><br>
+        
+        {% for venue in venues %}
+
+            {{ venue }}
+
+        {% endfor %}   
+
+    {% else %}
+
+        <h1>Oi! ola </h1>
+
+    {% endif %}
+        
+{% endblock main %}
+    

@@ -36,6 +36,7 @@ class Banner(models.Model):
 
 class Destaques(models.Model):
     title_featured = models.CharField(max_length=255)
+    sub_title_featured = models.TextField()
     slug_featured = models.SlugField(max_length=255)
     image_featured = StdImageField('ImageFeatured', upload_to='img_featured')
     body_featured = RichTextField()
