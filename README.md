@@ -6,7 +6,6 @@
     <ul>
         <li>Comentários</li>
         <li>Like</li>
-        <li>Pesquisa</li>
         <li>Detalhes dos Posts</li>
     </ul>
 </div>
