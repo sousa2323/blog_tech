@@ -4,7 +4,7 @@ from .models import Post, Categories, Banner, Destaques
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', ]
-    list_display = ('id', 'title', 'sub_title', 'created', 'update')
+    list_display = ('title', 'sub_title', 'created', 'update')
     ordering = ['created']
     prepopulated_fields = {'slug': ('title',)}
 

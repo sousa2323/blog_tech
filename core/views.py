@@ -39,3 +39,8 @@ def search_results(request):
 		return render(request, 
 		'search_results.html', 
 		{})
+
+def search_view(request, search_id):
+	search = Post.objects.get(pk=search_id)
+	return render(request, 'search_view.html', {'search': search})
+

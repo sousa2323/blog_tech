@@ -1,23 +1,33 @@
+{% extends 'blog/view_detail.html' %}
 {% load static %}
 
+  
 
 {% block main %}
-    
-    {% if query %}
+ 
+    <section>
+        {% if query %}
+            <header class="main">
+                <h1>Pesquisa {{ query }}</h1>
+            </header>
 
-        <h1>Pesquisa {{ query }}</h1><br>
-        
-        {% for venue in venues %}
+        {% for venue in venues %}  
 
-            {{ venue }}
-
+        <h4>Resultados</h4>
+        <dl>
+            <dt><a href="{% url 'search_view' search_id=venue.id %}">{{ venue }}</a></dt>
+            <dd>
+                <p>{{ venue.body|safe }}</p>
+            </dd>
+        </dl>
         {% endfor %}   
 
-    {% else %}
+        {% else %}
 
-        <h1>Oi! ola </h1>
+            <h1>Ops, Sua pesquisa não foi encontrada</h1>
 
-    {% endif %}
-        
+
+        {% endif %}
+    </section>
 {% endblock main %}
     
