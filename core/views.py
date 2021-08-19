@@ -16,15 +16,12 @@ class IndexView(TemplateView):
         context["featured"] = Destaques.objects.order_by('-created_featured')[:3].all()
         return context    
     
-class ViewDetail(DetailView):
-    template_name = "view_detail.html"
-
+class FeaturedList(ListView): 
+    template_name = "featured_list.html"  
 
 class FeaturedDetail(DetailView):
     template_name = "featured_view.html"
 
-class FeaturedList(ListView): 
-    template_name = "featured_list.html"  
 
 def search_results(request):
 	if request.method == "POST":
@@ -42,5 +39,7 @@ def search_results(request):
 
 def search_view(request, search_id):
 	search = Post.objects.get(pk=search_id)
-	return render(request, 'search_view.html', {'search': search})
+	return render(request, 'view/search_view.html', {'search': search})
+
+
 
