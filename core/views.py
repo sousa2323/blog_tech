@@ -13,14 +13,9 @@ class IndexView(TemplateView):
         context = super(IndexView, self).get_context_data(**kwargs)
         context["post"] = Post.objects.order_by('-created')[:6].all()
         context["banner"] = Banner.objects.order_by('-created_banner')[:1].all()
-        context["featured"] = Destaques.objects.order_by('-created_featured')[:3].all()
         return context    
     
-class FeaturedList(ListView): 
-    template_name = "featured_list.html"  
-
-class FeaturedDetail(DetailView):
-    template_name = "featured_view.html"
+    
 
 
 def search_results(request):
